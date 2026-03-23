@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>坂根屋 Instagram 運用ノート</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #F8F8F6;
+  --white:    #FFFFFF;
+  --ink:      #1A1A1A;
+  --mid:      #555;
+  --muted:    #888;
+  --border:   #E4E4E0;
+  --green:    #0F6B48;
+  --green-m:  #149A6A;
+  --green-l:  #E8F5EF;
+  --green-p:  #F2FAF7;
+  --amber:    #7A5010;
+  --amber-l:  #FBF2E2;
+  --blue:     #1A4F82;
+  --blue-l:   #EAF1FA;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page { max-width: 820px; margin: 0 auto; padding: 56px 40px 100px; }
+
+/* ── COVER ── */
+.cover {
+  background: var(--ink);
+  border-radius: 16px;
+  padding: 40px 44px;
+  margin-bottom: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: -60px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20,154,106,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cover-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green-m);
+  margin-bottom: 16px;
+}
+.cover h1 {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.25;
+  color: white;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.cover h1 span { color: #5DDBA8; }
+.cover-desc {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: 28px;
+}
+.cover-meta {
+  display: flex;
+  gap: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.cover-meta-item { }
+.cover-meta-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 3px;
+}
+.cover-meta-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+}
+
+/* ── SECTION ── */
+.section { margin-bottom: 56px; }
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.section-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.section-title {
+  font-size: 19px;
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.section-rule {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 24px;
+}
+.section-lead {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+/* ── CARD ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 26px;
+  margin-bottom: 14px;
+}
+.card:last-child { margin-bottom: 0; }
+.card-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── POINT LIST ── */
+.point-list { display: flex; flex-direction: column; gap: 14px; }
+.point {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.point-num {
+  font-size: 11px;
+  font-weight: 900;
+  color: var(--green-m);
+  background: var(--green-l);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.point-body { flex: 1; }
+.point-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.point-desc {
+  font-size: 12.5px;
+  color: var(--mid);
+  line-height: 1.8;
+}
+.point-desc b { color: var(--ink); font-weight: 700; }
+
+/* ── EXAMPLE BOX ── */
+.example {
+  background: var(--green-p);
+  border: 1px solid #B8D9CB;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-top: 10px;
+}
+.example-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+.example-body {
+  font-size: 12.5px;
+  color: #1A4A38;
+  line-height: 1.8;
+}
+.example-body b { font-weight: 700; }
+
+/* ── AMBER BOX ── */
+.amber-box {
+  background: var(--amber-l);
+  border: 1px solid #D8B878;
+  border-left: 3px solid #C07A10;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: var(--amber);
+  line-height: 1.8;
+}
+.amber-box b { font-weight: 700; }
+
+/* ── BLUE BOX ── */
+.blue-box {
+  background: var(--blue-l);
+  border: 1px solid #AACADE;
+  border-left: 3px solid var(--blue);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: var(--blue);
+  line-height: 1.8;
+}
+.blue-box b { font-weight: 700; }
+
+/* ── NG LIST ── */
+.ng-list {
+  background: #FFF5F5;
+  border: 1px solid #F0C0C0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-top: 10px;
+}
+.ng-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #B02020;
+  margin-bottom: 8px;
+}
+.ng-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #6A2020;
+  margin-bottom: 6px;
+  line-height: 1.7;
+}
+.ng-item:last-child { margin-bottom: 0; }
+.ng-item::before {
+  content: '×';
+  font-weight: 900;
+  color: #C04040;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── TWO COL ── */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+/* ── CAPTION EXAMPLE ── */
+.caption-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.caption-card {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 14px 16px;
+  border-left: 3px solid transparent;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.caption-card.good { border-left-color: var(--green-m); }
+.caption-card.good .caption-tag { color: var(--green); }
+.caption-card.bad { border-left-color: #CCC; }
+.caption-card.bad .caption-tag { color: var(--muted); }
+.caption-tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.caption-text { color: var(--mid); line-height: 1.9; }
+.caption-text em { font-style: normal; font-weight: 700; color: var(--green); }
+
+/* ── NETA TABLE ── */
+.neta-table {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.neta-head {
+  display: grid;
+  grid-template-columns: 1fr 160px 120px;
+  background: var(--ink);
+  padding: 9px 20px;
+  gap: 16px;
+}
+.neta-th {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+}
+.neta-row {
+  display: grid;
+  grid-template-columns: 1fr 160px 120px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  gap: 16px;
+  align-items: start;
+}
+.neta-row:last-child { border-bottom: none; }
+.neta-row:nth-child(odd) { background: var(--green-p); }
+.neta-title { font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.4; }
+.neta-type {
+  display: inline-block;
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+.type-kojo  { background: var(--green-l); color: var(--green); }
+.type-kisetu { background: #FEF3E2; color: #8A5A10; }
+.type-chishiki { background: var(--blue-l); color: var(--blue); }
+.neta-point { font-size: 12px; color: var(--mid); line-height: 1.7; }
+.neta-note  { font-size: 11px; color: var(--muted); line-height: 1.65; }
+
+/* ── FLOW ── */
+.flow {
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr 28px 1fr 28px 1fr;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.flow-step { padding: 18px 12px; text-align: center; border-right: 1px solid var(--border); }
+.flow-step:last-child { border-right: none; }
+.flow-step.hl { background: var(--green-l); }
+.flow-arrow { display: flex; align-items: center; justify-content: center; color: #CCC; font-size: 16px; border-right: 1px solid var(--border); }
+.flow-icon  { font-size: 22px; margin-bottom: 6px; }
+.flow-title { font-size: 12px; font-weight: 700; line-height: 1.5; color: var(--ink); }
+.flow-sub   { font-size: 10.5px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
+
+/* ── DATA ── */
+.data-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 14px; }
+.data-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 16px;
+  border-top: 3px solid var(--green-m);
+}
+.data-num {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+.data-label { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.data-desc  { font-size: 12px; color: var(--mid); line-height: 1.7; }
+
+/* ── CALLOUT ── */
+.callout {
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 13px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+.callout b { font-weight: 700; }
+.callout.green { background: var(--green-l); border-left: 3px solid var(--green-m); color: #0A4A30; }
+
+/* ── FOOTER ── */
+.footer {
+  margin-top: 64px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #AAA;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">Sakaneya Instagram — 運用ノート</div>
+  <h1>坂根屋<span>Instagram</span><br>運用まとめ</h1>
+  <p class="cover-desc">
+    2ヶ月間の運用を通じてわかった、坂根屋Instagramの撮り方・編集の考え方・キャプションの書き方・ネタの見つけ方をまとめたものです。今後の運用の参考にしていただければ幸いです。
+  </p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">運用期間</div>
+      <div class="cover-meta-val">2026年2月〜4月</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">作成</div>
+      <div class="cover-meta-val">湊翔</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">対象</div>
+      <div class="cover-meta-val">@izumo.sakaneya</div>
+    </div>
+  </div>
+</div>
+
+<!-- 最初に知っておいてほしいこと -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">📊</span>
+    <span class="section-title">まず、数字が証明していること</span>
+  </div>
+  <div class="section-rule"></div>
+  <p class="section-lead">運用をはじめる前に、この2ヶ月で出た数字を見てください。「何を意識して投稿すればいいか」の答えが、ここに全部入っています。</p>
+
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="data-label">Top Reel</div>
+      <div class="data-num">2.9万</div>
+      <div class="data-desc">「手仕事」1本の累計再生数。工場・製造工程を映した動画が最も伸びた。</div>
+    </div>
+    <div class="data-card">
+      <div class="data-label">フォロワー以外リーチ</div>
+      <div class="data-num">97%</div>
+      <div class="data-desc">好調な動画の閲覧のほとんどが、まだフォローしていない新規の人から来ている。</div>
+    </div>
+    <div class="data-card">
+      <div class="data-label">視聴者の女性比率</div>
+      <div class="data-num">71%</div>
+      <div class="data-desc">45〜54歳が最多。全国94%からアクセス。通販に興味を持つ層と重なっている。</div>
+    </div>
+  </div>
+
+  <div class="callout green">
+    「工場の裏側・手仕事・製造過程を<b>見せる動画</b>」が圧倒的に伸びる。これが2ヶ月間のデータが出した答えです。この資料はすべて、この前提に基づいて書いています。
+  </div>
+</div>
+
+<!-- 撮影 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🎬</span>
+    <span class="section-title">撮影で意識すること</span>
+  </div>
+  <div class="section-rule"></div>
+  <p class="section-lead">Instagramのリールは数秒で「見続けるか・スキップするか」が決まります。撮影の段階から「飽きさせない映像」を意識することがとても重要です。</p>
+
+  <div class="card">
+    <div class="card-title">基本の意識</div>
+    <div class="point-list">
+      <div class="point">
+        <div class="point-num">1</div>
+        <div class="point-body">
+          <div class="point-title">映像の中に「動き」を絶やさない</div>
+          <div class="point-desc">止まった映像が続くと視聴者は離れやすくなります。<b>手が動いている・素材が動いている・湯気が立っている</b>など、フレームの中で何かが常に動いている状態を意識して撮りましょう。</div>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point-num">2</div>
+        <div class="point-body">
+          <div class="point-title">カメラ自体も動かす</div>
+          <div class="point-desc">被写体に<b>寄っていく・引いていく・横にスライドする</b>など、カメラ自体に動きをつけることで映像にリズムが生まれます。三脚に固定したまま撮ると単調になりやすいので注意。</div>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point-num">3</div>
+        <div class="point-body">
+          <div class="point-title">「手元」のアップをたくさん撮る</div>
+          <div class="point-desc">職人さんの手元・道具・素材に寄ったショットは特に視聴維持率が高くなる傾向があります。<b>全体を引きで撮ったカットと、手元のアップカットをセットで撮る</b>習慣をつけると編集が楽になります。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">工場内で気をつけること</div>
+    <div class="point-list">
+      <div class="point">
+        <div class="point-num">4</div>
+        <div class="point-body">
+          <div class="point-title">映したくない部分を事前に把握しておく</div>
+          <div class="point-desc">工場内にはゴミ箱・段ボール・ビール箱・木の板など、映像として見せたくないものが映り込む場合があります。撮影前に<b>「今日映ってはいけない場所・ものを確認する」</b>習慣をつけましょう。</div>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point-num">5</div>
+        <div class="point-body">
+          <div class="point-title">それでも映ってしまったら編集でカバー</div>
+          <div class="point-desc">意図せず映ってしまった場合は、<b>そのシーンをカットするか、ズームして見えないようにする</b>処理を編集でします。映ったシーンをそのまま使わないことが大切です。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="amber-box">
+      📌 撮る量は多めに。編集で使えるカットを選ぶため、「これで足りるかな」と思う倍くらい撮っておくのがおすすめです。
+    </div>
+  </div>
+</div>
+
+<!-- 編集 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">✂️</span>
+    <span class="section-title">編集で意識すること</span>
+  </div>
+  <div class="section-rule"></div>
+  <p class="section-lead">編集の目的は「飽きさせないこと」と「和菓子が美しく見えること」のふたつです。凝った演出より、テンポと見やすさを優先しましょう。</p>
+
+  <div class="card">
+    <div class="card-title">カット・テンポ</div>
+    <div class="point-list">
+      <div class="point">
+        <div class="point-num">1</div>
+        <div class="point-body">
+          <div class="point-title">とにかくテンポよくカットする</div>
+          <div class="point-desc">1カットが長くなると視聴者が離れやすくなります。<b>「もう少し見たいな」と思うより少し前にカットを切る</b>感覚が大切です。リズムよくカットを繋ぐことが、最後まで見てもらえる動画になる近道です。</div>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point-num">2</div>
+        <div class="point-body">
+          <div class="point-title">BGMのリズムに合わせてカットを切る</div>
+          <div class="point-desc">音楽のビートやフレーズの切り替わりに合わせてカットを入れると、映像にリズム感が生まれます。カット割りのタイミングを音楽に乗せるだけで、全体的な完成度がぐっと上がります。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">テロップ</div>
+    <div class="point-list">
+      <div class="point">
+        <div class="point-num">3</div>
+        <div class="point-body">
+          <div class="point-title">太文字・白文字・見やすいフォントを使う</div>
+          <div class="point-desc">テロップは<b>視認性を最優先</b>に。細いフォント・小さい文字・背景と同化する色は避けましょう。白の太文字＋黒い縁取りが最もシンプルで読みやすいです。</div>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point-num">4</div>
+        <div class="point-body">
+          <div class="point-title">テロップは「短く・端的に」</div>
+          <div class="point-desc">長い説明文は読まれません。<b>5〜10文字程度の短いテキスト</b>を画面の端に置くイメージで。詳しい説明はキャプション欄に書きましょう。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">映像の見せ方</div>
+    <div class="point-list">
+      <div class="point">
+        <div class="point-num">5</div>
+        <div class="point-body">
+          <div class="point-title">和菓子が一番きれいに見える配置を意識する</div>
+          <div class="point-desc">被写体（和菓子・手元・素材）がフレームの中で<b>見やすい位置・サイズ</b>に収まっているか確認しましょう。端に寄りすぎている・小さすぎるカットは思い切ってカットするか、ズームして調整します。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blue-box">
+      💡 編集アプリはMeta公式の<b>Edits</b>がおすすめです。Instagram向けに作られており、テロップ追加・カット・BGM入れがスマートフォン一台でできます。
+    </div>
+  </div>
+</div>
+
+<!-- キャプション -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">✍️</span>
+    <span class="section-title">キャプションの書き方</span>
+  </div>
+  <div class="section-rule"></div>
+  <p class="section-lead">キャプションは「商品の宣伝文」ではなく、「見ている人と同じ目線で、素直に感じたことを書く」と共感されやすくなります。</p>
+
+  <div class="card">
+    <div class="card-title">基本の考え方</div>
+    <div class="point-list">
+      <div class="point">
+        <div class="point-num">1</div>
+        <div class="point-body">
+          <div class="point-title">「お客さん目線」で客観的に書く</div>
+          <div class="point-desc">動画を見ているお客さんと同じ立場に立って、<b>「自分が素直にすごいと思ったこと・心から感じたこと」</b>を書きましょう。宣伝っぽい言葉より、素直な言葉の方が読んでいて心地いいです。</div>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point-num">2</div>
+        <div class="point-body">
+          <div class="point-title">「ぼそっと漏れた言葉」を入れる</div>
+          <div class="point-desc">丁寧語でびっちり書くよりも、<b>心から漏れてしまったような短い一言</b>を混ぜると、読んでいる人が共感しやすくなります。「繊細な作業...」「これ、力仕事だ」「職人さんってすごい...」のような感じです。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">キャプション例</div>
+    <div class="caption-wrap">
+      <div class="caption-card good">
+        <div class="caption-tag">✓ こういうキャプションが共感されやすい</div>
+        <div class="caption-text">
+          【出雲の老舗和菓子屋｜工場の裏側】<br>
+          今日は春限定の「桜クレープ」を作っているところを少しだけ。<br><br>
+          この生地、実は桜餅と同じ生地を独自の製法で毎朝焼いてます。<br>
+          出雲で作られるタピオカでんぷんを使っているので、もっちり食感になるんです。<br><br>
+          中は、粒あん入りホイップクリーム。<br>
+          <em>繊細な作業...</em>
+        </div>
+      </div>
+      <div class="caption-card bad">
+        <div class="caption-tag" style="color:var(--muted)">△ 少し宣伝っぽく見えるキャプション</div>
+        <div class="caption-text" style="color:#888">
+          春限定の桜クレープが登場しました！<br>
+          もっちり食感で美味しいので、ぜひ食べてみてください。<br>
+          通販でもお買い求めいただけます。
+        </div>
+      </div>
+    </div>
+
+    <div class="amber-box" style="margin-top:14px">
+      📌 ハッシュタグは「#出雲観光 #出雲カフェ #和菓子」のように、<b>地域＋ジャンル</b>の組み合わせがおすすめです。多すぎると逆効果なので5〜8個程度にしましょう。
+    </div>
+  </div>
+</div>
+
+<!-- ネタの決め方 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">💡</span>
+    <span class="section-title">ネタの決め方・探し方</span>
+  </div>
+  <div class="section-rule"></div>
+  <p class="section-lead">「何を撮ればいいかわからない」と思ったら、まず工場の中を見渡してみてください。和菓子が作られているところに、ほぼ必ずネタがあります。</p>
+
+  <div class="card">
+    <div class="card-title">基本のネタ探し</div>
+    <div class="point-list">
+      <div class="point">
+        <div class="point-num">1</div>
+        <div class="point-body">
+          <div class="point-title">「撮れる和菓子・工程」を見つけたら撮る</div>
+          <div class="point-desc">難しく考えなくて大丈夫です。<b>今日工場で作っているもの・仕込んでいるもの</b>があれば、それをそのまま撮るだけでネタになります。「特別なことをしないといけない」という思い込みは不要です。</div>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point-num">2</div>
+        <div class="point-body">
+          <div class="point-title">製造の「工程」ごとに1本ずつネタが生まれる</div>
+          <div class="point-desc">例えば「あんこを炊く」だけでも1本になります。<b>仕込み・成形・焼き・包装</b>など、ひとつの商品ができるまでの各工程を別々のリールにするイメージで考えると、ネタに困りにくくなります。</div>
+        </div>
+      </div>
+      <div class="point">
+        <div class="point-num">3</div>
+        <div class="point-body">
+          <div class="point-title">季節に合わせた商品を優先する</div>
+          <div class="point-desc"><b>その時期にしか作らない限定商品</b>は特に視聴者の興味を引きやすいです。季節の和菓子が登場したらすぐに撮影しましょう。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  </div>
+</div>
+
+<!-- 通販への繋げ方 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🛒</span>
+    <span class="section-title">通販への繋げ方</span>
+  </div>
+  <div class="section-rule"></div>
+  <p class="section-lead">リールで認知を広げて、ストーリーズで通販に誘導するのが基本の流れです。2ヶ月間で通販リンクへのタップが累計125回出た実績があります。</p>
+
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-icon">🎬</div>
+      <div class="flow-title">リールで<br>認知を広げる</div>
+      <div class="flow-sub">工場・手仕事系が効果的</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="flow-icon">👤</div>
+      <div class="flow-title">プロフィールに<br>誘導する</div>
+      <div class="flow-sub">リンクを目立つ場所に</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step hl">
+      <div class="flow-icon">📱</div>
+      <div class="flow-title">ストーリーズで<br>通販を紹介</div>
+      <div class="flow-sub">リンクスタンプを活用</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step hl">
+      <div class="flow-icon">🛒</div>
+      <div class="flow-title">通販サイトへ<br>誘導</div>
+      <div class="flow-sub">購入につなげる</div>
+    </div>
+  </div>
+
+  <div class="callout green">
+    ストーリーズのリンクスタンプを使うと、直接通販サイトへ飛べるリンクを貼れます。<b>リールを投稿したタイミングで、セットでストーリーズに通販誘導用のリンクを設置する</b>のがポイントです。リールを見て興味を持った人がそのままプロフィールに来たときに、ストーリーズのリンクから通販に流れやすくなります。
+  </div>
+</div>
+
+<!-- 最後に -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">📝</span>
+    <span class="section-title">まとめ ─ 迷ったときのチェックリスト</span>
+  </div>
+  <div class="section-rule"></div>
+
+  <div class="two">
+    <div class="card">
+      <div class="card-title">撮影前に確認</div>
+      <div class="point-list">
+        <div class="point">
+          <div class="point-num" style="background:#F5F5F5;color:#888">✓</div>
+          <div class="point-body"><div class="point-desc">映ってはいけないもの（ゴミ箱・段ボールなど）を把握した</div></div>
+        </div>
+        <div class="point">
+          <div class="point-num" style="background:#F5F5F5;color:#888">✓</div>
+          <div class="point-body"><div class="point-desc">「手が動いている・素材が動いている」場面を撮る意識がある</div></div>
+        </div>
+        <div class="point">
+          <div class="point-num" style="background:#F5F5F5;color:#888">✓</div>
+          <div class="point-body"><div class="point-desc">引き・寄り・横移動など、複数のアングルで撮る</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">投稿前に確認</div>
+      <div class="point-list">
+        <div class="point">
+          <div class="point-num" style="background:#F5F5F5;color:#888">✓</div>
+          <div class="point-body"><div class="point-desc">テロップが太文字で読みやすいか</div></div>
+        </div>
+        <div class="point">
+          <div class="point-num" style="background:#F5F5F5;color:#888">✓</div>
+          <div class="point-body"><div class="point-desc">見せたくないものが映り込んでいないか</div></div>
+        </div>
+        <div class="point">
+          <div class="point-num" style="background:#F5F5F5;color:#888">✓</div>
+          <div class="point-body"><div class="point-desc">キャプションが宣伝っぽくなっていないか</div></div>
+        </div>
+        <div class="point">
+          <div class="point-num" style="background:#F5F5F5;color:#888">✓</div>
+          <div class="point-body"><div class="point-desc">ハッシュタグを5〜8個つけたか</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout green" style="margin-top:14px">
+    完璧を目指さなくて大丈夫です。<b>「工場・手仕事系の動画を月2〜3本投稿し続けること」</b>が、数字を維持するために一番大切なことです。この資料で迷ったことがあれば参考にしてください。
+  </div>
+</div>
+
+<div class="footer">
+  <span>坂根屋 Instagram 運用まとめ ／ 作成：湊翔（2026年4月）</span>
+  <span>@izumo.sakaneya</span>
+</div>
+
+</div>
+</body>
+</html>
